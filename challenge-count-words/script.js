@@ -2,7 +2,14 @@ function calculateWords(chapterOfABook) {
   const wordCount = {};
 
   // Write your code in here
-
+  chapterOfABook.split(' ').reduce((count, currWord) => {
+    if (currWord !== "") {
+      count[currWord] = count.hasOwnProperty(currWord)
+        ? count[currWord] + 1
+        : 1;
+    }
+    return count
+},wordCount)
   return wordCount;
 }
 
